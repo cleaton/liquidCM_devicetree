@@ -1,0 +1,104 @@
+
+service dhcp-service /system/bin/netcfg eth0 dhcp
+	oneshot
+
+on property:dev.bootcomplete=1
+	stop dhcp-service
+	start dhcp-service
+
+on boot
+    chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
+    chown wifi wifi /sys/module/wifi_power/parameters/power
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/type
+    chown bluetooth bluetooth /sys/class/rfkill/rfkill0/state
+    chown bluetooth bluetooth /proc/bluetooth/sleep/proto
+    chown system system /sys/module/sco/parameters/disable_esco
+    chmod 0660 /sys/module/bluetooth_power/parameters/power
+    chmod 0660 /sys/module/wifi_power/parameters/power
+    chmod 0660 /sys/class/rfkill/rfkill0/state
+    chmod 0660 /proc/bluetooth/sleep/proto
+    chown bluetooth bluetooth /dev/ttyHS1
+    chmod 0660 /dev/ttyHS1
+    chown system system /sys/bus/platform/devices/msm_sdcc.1/polling
+    chown system system /sys/bus/platform/devices/msm_sdcc.2/polling
+    chown system system /sys/bus/platform/devices/msm_sdcc.3/polling
+    chown system system /sys/bus/platform/devices/msm_sdcc.4/polling
+    chown system system /sys/devices/platform/msm_hsusb_periphera/composition
+    chown system system /sys/class/power_supply/battery/charging
+    chmod 0777 /data/data/SimpleTest.Fac
+    symlink /dev/msm_pcm /dev/msm_pcm_out
+    chown system audio /dev/msm_pcm
+    chmod 0660 /dev/msm_pcm
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+
+
+# Enable MASS storage on SDCARD
+    write /sys/devices/platform/mass_storage/lun0/file /dev/block/mmcblk0p1
+
+service acer_log /system/bin/alog
+   user root
+   group system
+   oneshot
+
+service airbaggy /system/bin/airbaggy
+   user root
+   group system
+   oneshot
+
+on property:persist.service.alog.enable=1
+	start acer_log
+
+on property:persist.service.alog.enable=0
+	stop acer_log
+
+on property:init.svc.hciattach=running
+    write /sys/devices/virtual/bluetooth/hci0/idle_timeout 7000
+    write /proc/bluetooth/sleep/proto 1
+
+on property:init.svc.hciattach=stopped
+    write /proc/bluetooth/sleep/proto 0
+
+
+service wpa_supplicant /system/bin/wpa_supplicant \
+    -Dwext -ieth0 -c/data/misc/wifi/wpa_supplicant.conf
+#   we will start as root and wpa_supplicant will switch to user wifi
+#   after setting up the capabilities required for WEXT
+#   user wifi
+#   group wifi inet keystore
+    socket wpa_eth0 dgram 660 wifi wifi
+    disabled
+    oneshot
+
+service dhcpcd /system/bin/dhcpcd -ABKL
+    disabled
+    oneshot
+
+on property:init.svc.wpa_supplicant=stopped
+    stop dhcpcd
+
+service sensor-daemon /system/bin/sensorserver_yamaha
+    user system
+    group system
+
+service salsa-sh /system/bin/sh /init.salsa.sh
+    user root
+    oneshot
+
+service wifibtap /system/bin/wifibtap
+    user root
+    group root
+    oneshot
+
+service hciattach /system/bin/brcm_patchram_plus --enable_hci --enable_lpm \
+    --baudrate 3000000 --patchram /etc/firmware/BCM4325.hcd /dev/ttyHS1
+    user bluetooth
+    group bluetooth net_bt_admin
+    disabled
+
+service ifcfg_new /system/bin/ifconfig eth0 up
+    disabled
+    oneshot
+
+service dhcp-service /system/bin/netcfg eth0 dhcp
+	oneshot

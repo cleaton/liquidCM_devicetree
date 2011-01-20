@@ -1,0 +1,8 @@
+#!/system/bin/sh
+
+/system/bin/logcat > /system/plop &
+while true;do
+	sleep 1
+	dmesg -c >> /system/plop2
+	sync
+done

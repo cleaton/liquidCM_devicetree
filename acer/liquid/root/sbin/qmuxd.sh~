@@ -1,0 +1,3 @@
+#!/system/bin/sh
+
+busybox chroot /data/d /system/bin/qmuxd
