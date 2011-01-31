@@ -29,10 +29,6 @@ BOARD_HAVE_FM_RADIO := false
 BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
 BOARD_USES_QCOM_LIBS := true
 
-TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
-TARGET_PROVIDES_LIBAUDIO := true
-
-JS_ENGINE := v8
 
 
 BOARD_NO_RGBX_8888 := true
@@ -43,13 +39,13 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION := VER_0_6_X
-BOARD_WLAN_DEVICE := bcm4325
-WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/dhd.ko"
-WIFI_DRIVER_FW_STA_PATH := "/etc/wifi/BCM4325.bin"
-WIFI_DRIVER_FW_AP_PATH := "/etc/wifi/BCM4325_apsta.bin"
-WIFI_DRIVER_MODULE_ARG := "firmware_path=/etc/wifi/BCM4325.bin nvram_path=/etc/wifi/nvram.txt"
-WIFI_DRIVER_MODULE_NAME := "dhd"
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
+BOARD_WLAN_DEVICE           := bcm4329
+WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
+WIFI_DRIVER_FW_STA_PATH     := "/vendor/firmware/fw_bcm4329.bin"
+WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
+WIFI_DRIVER_MODULE_ARG      := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/etc/wifi/nvram.txt"
+WIFI_DRIVER_MODULE_NAME := "bcm4329"
 
 TARGET_NO_BOOTLOADER := true
 TARGET_NO_KERNEL := true

@@ -33,7 +33,7 @@
 
 #include "gralloc_priv.h"
 #include <sys/ioctl.h>
-#include </home/roggin/CM/kernel/include/linux/android_pmem.h>
+#include "android_pmem.h"
 
 
 // we need this for now because pmem cannot mmap at an offset
