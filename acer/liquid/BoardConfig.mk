@@ -42,8 +42,8 @@ BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
 BOARD_WLAN_DEVICE           := bcm4325
 WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-WIFI_DRIVER_FW_STA_PATH := "/etc/wifi/BCM4325.bin"	 	
-WIFI_DRIVER_FW_AP_PATH := "/etc/wifi/BCM4325_apsta.bin"	 	
+WIFI_DRIVER_FW_STA_PATH := "/etc/wifi/BCM4325.bin"
+WIFI_DRIVER_FW_AP_PATH := "/etc/wifi/BCM4325_apsta.bin"
 WIFI_DRIVER_MODULE_ARG := "firmware_path=/etc/wifi/BCM4325.bin nvram_path=/etc/wifi/nvram.txt"
 WIFI_DRIVER_MODULE_NAME := "bcm4329"
 
