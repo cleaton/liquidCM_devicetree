@@ -208,6 +208,6 @@ device/acer/liquid/proprietary/lib/libOmxVdec.so:system/lib/libOmxVdec.so
 #device/acer/liquid/proprietary/lib/libOmxVidEnc.so:system/lib/libOmxVidEnc.so
 
 # Copy kernel modules
-PRODUCT_COPY_FILES += \
-device/acer/liquid/proprietary/lib/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
-device/acer/liquid/proprietary/lib/modules/dhd.ko:system/lib/modules/dhd.ko
+#PRODUCT_COPY_FILES += \
+#device/acer/liquid/proprietary/lib/modules/bcm4329.ko:system/lib/modules/bcm4329.ko \
+#device/acer/liquid/proprietary/lib/modules/dhd.ko:system/lib/modules/dhd.ko
