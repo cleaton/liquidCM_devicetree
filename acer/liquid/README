@@ -1,3 +1,7 @@
+First look at http://wiki.cyanogenmod.com/index.php?title=Compile_CyanogenMod_for_Passion to download dependencies and cyanogensource code
+
+
+
 Add this device tree to cyanogenmod sources so you get
 
   <cyanogenrootfolder>/device/acer/liquid/
@@ -15,9 +19,7 @@ copy cyanogen_liquid.mk from this devicetree (see cyanvendor folder) so you get
   <cyanogenrootfolder>/vendor/cyanogen/products/cyanogen_liquid.mk
 
 
-You can now start building :) for more information about build dependencies etc please see
-
-http://wiki.cyanogenmod.com/index.php?title=Compile_CyanogenMod_for_Passion
+You can now start building :) 
 
 
 
