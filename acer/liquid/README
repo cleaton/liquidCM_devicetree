@@ -1,0 +1,37 @@
+Add this device tree to cyanogenmod sources so you get
+
+  <cyanogenrootfolder>/device/acer/liquid/
+
+Modify vendorsetup.sh in <cyanogenrootfolder>/vendor/cyanogen/ to include
+
+  add_lunch_combo cyanogen_liquid-eng
+
+modify AndroidProducts.mk in <cyanogenrootfolder>/vendor/cyanogen/products/ to include
+
+  $(LOCAL_DIR)/cyanogen_liquid.mk
+
+copy cyanogen_liquid.mk from this devicetree (see cyanvendor folder) so you get
+
+  <cyanogenrootfolder>/vendor/cyanogen/products/cyanogen_liquid.mk
+
+
+You can now start building :) for more information about build dependencies etc please see
+
+http://wiki.cyanogenmod.com/index.php?title=Compile_CyanogenMod_for_Passion
+
+
+
+
+
+
+
+
+
+
+//commands (from <cyanogenrootfolder>)
+
+. build/envsetup.sh
+
+brunch liquid (if it is not working you could try "lunch cyanogen_liquid-eng")
+
+make -jx (2*cores)
