@@ -95,12 +95,6 @@
                 <item>0</item>
                 <item>0</item>
     </integer-array>
-    <!-- Enables special filtering code in the framework for raw touch events
-         from the touch driver.  This code exists for one particular device,
-         and should not be enabled for any others.  Hopefully in the future
-         it will be removed when the lower-level touch driver generates better
-         data. -->
-    <bool name="config_filterTouchEvents">true</bool>
     <!-- Component name of the service providing network location support. -->
     <string name="config_networkLocationProvider">com.google.android.location.NetworkLocationProvider</string>
 
