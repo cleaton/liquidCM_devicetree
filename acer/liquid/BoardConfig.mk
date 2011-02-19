@@ -71,4 +71,4 @@ BOARD_EGL_CFG := device/acer/liquid/proprietary/lib/egl/egl.cfg
 # to enable the GPS HAL
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := salsa
 # AMSS version to use for GPS
-BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 6225
+BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 1240
