@@ -171,8 +171,7 @@ device/acer/liquid/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_
 # Copy Vold and configs
 PRODUCT_COPY_FILES += \
 device/acer/liquid/proprietary/etc/vold.fstab:system/etc/vold.fstab \
-device/acer/liquid/proprietary/etc/vold.conf:system/etc/vold.conf \
-device/acer/liquid/proprietary/bin/vold:system/bin/vold
+device/acer/liquid/proprietary/etc/vold.conf:system/etc/vold.conf
 
 # Copy sensor library, binary and configuration (need to chmod ms3c_yamaha.cfg upon flashing for yamaha sensor to function properly)
 PRODUCT_COPY_FILES += \
