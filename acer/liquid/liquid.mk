@@ -21,7 +21,6 @@ lights.salsa \
 gralloc.salsa \
 gps.salsa \
 copybit.salsa \
-libaudio.salsa \
 libcamera \
 libOmxCore \
 libOmxVidEnc 
@@ -158,6 +157,17 @@ device/acer/liquid/proprietary/data/misc/dhcp/dhcpcd-eth0.pid:data/misc/dhcp/dhc
 #PRODUCT_COPY_FILES += \
 #device/acer/liquid/proprietary/lib/libaudio.so:system/lib/libaudio.so
 
+# Copy Bluetooth stuff
+PRODUCT_COPY_FILES += \
+device/acer/liquid/proprietary/lib/libbluedroid.so:system/lib/libbluedroid.so \
+device/acer/liquid/proprietary/lib/libdiag.so:system/lib/libdiag.so \
+device/acer/liquid/proprietary/lib/libdsm.so:system/lib/libdsm.so \
+device/acer/liquid/proprietary/lib/libnv.so:system/lib/libnv.so \
+device/acer/liquid/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \
+device/acer/liquid/proprietary/bin/brcm_patchram_plus:system/bin/brcm_patchram_plus \
+device/acer/liquid/proprietary/bin/hciattach:system/bin/hciattach \
+device/acer/liquid/proprietary/etc/init.salsa.bt.sh:system/etc/init.salsa.bt.sh
+
 # Copy WiFi firmware and config
 PRODUCT_COPY_FILES += \
 device/acer/liquid/proprietary/etc/firmware/BCM4325.hcd:system/etc/firmware/BCM4325.hcd \
@@ -170,8 +180,7 @@ device/acer/liquid/proprietary/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_
 
 # Copy Vold and configs
 PRODUCT_COPY_FILES += \
-device/acer/liquid/proprietary/etc/vold.fstab:system/etc/vold.fstab \
-device/acer/liquid/proprietary/etc/vold.conf:system/etc/vold.conf
+device/acer/liquid/proprietary/etc/vold.fstab:system/etc/vold.fstab
 
 # Copy sensor library, binary and configuration (need to chmod ms3c_yamaha.cfg upon flashing for yamaha sensor to function properly)
 PRODUCT_COPY_FILES += \

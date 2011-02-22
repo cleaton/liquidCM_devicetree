@@ -1,3 +1,4 @@
+ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),salsa)
 # Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -31,3 +32,4 @@ LOCAL_PRELINK_MODULE := false
 include $(BUILD_SHARED_LIBRARY)
 
 endif # !TARGET_SIMULATOR
+endif
