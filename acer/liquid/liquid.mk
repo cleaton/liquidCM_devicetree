@@ -159,14 +159,7 @@ device/acer/liquid/proprietary/data/misc/dhcp/dhcpcd-eth0.pid:data/misc/dhcp/dhc
 
 # Copy Bluetooth stuff
 PRODUCT_COPY_FILES += \
-device/acer/liquid/proprietary/lib/libbluedroid.so:system/lib/libbluedroid.so \
-device/acer/liquid/proprietary/lib/libdiag.so:system/lib/libdiag.so \
-device/acer/liquid/proprietary/lib/libdsm.so:system/lib/libdsm.so \
-device/acer/liquid/proprietary/lib/libnv.so:system/lib/libnv.so \
-device/acer/liquid/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \
-device/acer/liquid/proprietary/bin/brcm_patchram_plus:system/bin/brcm_patchram_plus \
-device/acer/liquid/proprietary/bin/hciattach:system/bin/hciattach \
-device/acer/liquid/proprietary/etc/init.salsa.bt.sh:system/etc/init.salsa.bt.sh
+device/acer/liquid/proprietary/bin/brcm_patchram_plus:system/bin/brcm_patchram_plus
 
 # Copy WiFi firmware and config
 PRODUCT_COPY_FILES += \

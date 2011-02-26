@@ -1,32 +1,13 @@
 ifeq ($(TARGET_BOOTLOADER_BOARD_NAME),salsa)
 ifneq ($(BUILD_TINY_ANDROID),true)
+## Ugly hack: override default libaudio
+MODULE.TARGET.SHARED_LIBRARIES.libaudio :=
 
-LOCAL_PATH := $(call my-dir)
-
+LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES:=               \
-    AudioPolicyManager.cpp
-
-LOCAL_SHARED_LIBRARIES := \
-    libcutils \
-    libutils \
-    libmedia
-
-LOCAL_STATIC_LIBRARIES := libaudiopolicybase
-
-LOCAL_MODULE:= libaudiopolicy
-
-ifeq ($(BOARD_HAVE_BLUETOOTH),true)
-  LOCAL_CFLAGS += -DWITH_A2DP
-endif
-
-include $(BUILD_SHARED_LIBRARY)
-
-
-include $(CLEAR_VARS)
-
+LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := libaudio
+
 
 LOCAL_SHARED_LIBRARIES := \
     libcutils \
@@ -53,5 +34,7 @@ endif
 
 include $(BUILD_SHARED_LIBRARY)
 
+## Ugly hack: override default libaudio
+MODULE.TARGET.SHARED_LIBRARIES.libaudio :=
 endif # not BUILD_TINY_ANDROID
 endif
