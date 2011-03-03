@@ -29,11 +29,11 @@ BOARD_HAVE_FM_RADIO := false
 BOARD_VENDOR_QCOM_AMSS_VERSION := 6225
 BOARD_USES_QCOM_LIBS := true
 BOARD_USES_QCOM_LIBRPC := true
+BOARD_USES_QCOM_GPS := true
 TARGET_PROVIDES_LIBAUDIO := true
 
-
-BOARD_NO_RGBX_8888 := true
-TARGET_USES_OLD_LIBSENSORS_HAL := true
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun"
 
 # For Koush's recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
@@ -55,6 +55,7 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_CPU_ABI  := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
+ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_BOARD_PLATFORM := qsd8k
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno200
@@ -64,7 +65,7 @@ BOARD_KERNEL_BASE    := 0x20000000
 BOARD_NAND_PAGE_SIZE := 2048
 BOARD_PAGE_SIZE := 0x00001000
 
-#TARGET_PREBUILT_KERNEL := device/acer/liquid/kernel/kernel
+TARGET_PREBUILT_KERNEL := device/acer/liquid/kernel
 
 BOARD_KERNEL_CMDLINE := console=ttyDCC0 androidboot.hardware=qcom
 BOARD_EGL_CFG := device/acer/liquid/proprietary/lib/egl/egl.cfg

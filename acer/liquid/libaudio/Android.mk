@@ -28,7 +28,7 @@ include $(BUILD_SHARED_LIBRARY)
 
 include $(CLEAR_VARS)
 
-LOCAL_MODULE := libaudio.salsa
+LOCAL_MODULE := libaudio.salsaa
 LOCAL_BUILT_MODULE_STEM = libaudio
 
 LOCAL_SHARED_LIBRARIES := \

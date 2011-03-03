@@ -82,10 +82,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.gprsclass=10
 
 # Acer specific proximity sensor calibration
-PRODUCT_PROPERTY_OVERRIDES += \
-    hw.acer.psensor_thres=500 \
-    hw.acer.lsensor_multiplier=-1 \
-    hw.acer.psensor_mode=1
+#PRODUCT_PROPERTY_OVERRIDES += \
+#    hw.acer.psensor_thres=500 \
+#    hw.acer.lsensor_multiplier=-1 \
+#    hw.acer.psensor_mode=1
 
 # Acer hardware revision
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -149,9 +149,6 @@ device/acer/liquid/proprietary/etc/dhcpcd/dhcpcd-hooks/20-dns.conf:system/etc/dh
 device/acer/liquid/proprietary/etc/dhcpcd/dhcpcd-hooks/95-configured:system/etc/dhcpcd/dhcpcd-hooks/95-configured \
 device/acer/liquid/proprietary/data/misc/dhcp/dhcpcd-eth0.pid:data/misc/dhcp/dhcpcd-eth0.pid
 
-# Copy GPS libraries and dependencies
-#PRODUCT_COPY_FILES += \
-#device/acer/liquid/proprietary/lib/libgps.so:system/lib/libgps.so
 
 # Copy CodeAurora's prebuilt QSD8K libaudio
 #PRODUCT_COPY_FILES += \
@@ -179,13 +176,8 @@ device/acer/liquid/proprietary/etc/vold.fstab:system/etc/vold.fstab
 PRODUCT_COPY_FILES += \
 device/acer/liquid/proprietary/etc/firmware/yamato_pfp.fw:system/etc/firmware/yamato_pfp.fw \
 device/acer/liquid/proprietary/etc/firmware/yamato_pm4.fw:system/etc/firmware/yamato_pm4.fw \
-device/acer/liquid/proprietary/lib/hw/sensors.salsa.so:system/lib/hw/sensors.salsa.so \
-device/acer/liquid/proprietary/lib/libsensor_yamaha.so:system/lib/libsensor_yamaha.so \
-device/acer/liquid/proprietary/lib/libms3c_yamaha.so:system/lib/libms3c_yamaha.so \
-device/acer/liquid/proprietary/bin/sensorcalibutil_yamaha:system/bin/sensorcalibutil_yamaha \
-device/acer/liquid/proprietary/bin/sensorserver_yamaha:system/bin/sensorserver_yamaha \
-device/acer/liquid/proprietary/bin/sensorstatutil_yamaha:system/bin/sensorstatutil_yamaha \
-device/acer/liquid/proprietary/data/system/ms3c_yamaha.cfg:data/system/ms3c_yamaha.cfg
+device/acer/liquid/proprietary/data/system/ms3c_yamaha.cfg:data/system/ms3c_yamaha.cfg \
+device/acer/liquid/proprietary/lib/hw/sensors.salsa.so:system/lib/hw/sensors.salsa.so
 
 # Copy Acer keylayout and headset driver
 PRODUCT_COPY_FILES += \
