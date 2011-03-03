@@ -21,6 +21,7 @@ lights.salsa \
 gralloc.salsa \
 gps.salsa \
 copybit.salsa \
+sensors.salsa \
 libcamera \
 libOmxCore \
 libOmxVidEnc 
